@@ -7,7 +7,9 @@ dotenv.config()
 // Boots the Express server
 const app = express()
 app.use(express.json())
-
+app.get('/', (req, res) => {
+    res.json({ message: 'Promo Code API is running' })
+})
 app.use('/promo-codes', promoCodesRouter)
 app.use(errorHandler)
 
